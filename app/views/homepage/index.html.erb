@@ -1,5 +1,10 @@
 <div class="home-text">
   <h1>ArtDrop</h1>
-  <h5><a href="#" class="button round">Get Started</a></h5>
-
+  <h5 class="button round">
+    <% if user_signed_in? %>
+      <%= link_to 'Get Started', '#' %>
+    <% else %>
+      <%= link_to 'Get Started', new_user_registration_path %>
+    <% end %>
+  </h5>
 </div>
