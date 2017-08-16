@@ -28,10 +28,10 @@
 
       <section class="top-bar-section">
         <ul class="right">
+
+          <% if user_signed_in? %>
           <li><a href="#" class="button round">
             <i class="fa fa-upload" aria-hidden="true"></i> Upload</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Sign In</a></li>
           <li class="has-dropdown">
             <a href="#">Profile</a>
               <ul class="dropdown">
@@ -41,17 +41,24 @@
                   <i class="fa fa-cog" aria-hidden="true"></i> Edit Profile</a></li>
                 <li><a href="#">
                   <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a></li>
+            <% else %>
+                  <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                  <li><a href="#">Sign In</a></li>
+            <% end %>
               </ul>
           </li>
         </ul>
       </section>
     </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>
+
 
     <%= yield %>
 
