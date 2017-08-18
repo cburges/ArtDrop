@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'pry-rails'
