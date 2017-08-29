@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="assets/modernizr.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Text+Me+One" rel="stylesheet">
+    <script src="https://use.fontawesome.com/9b2b5e2406.js"></script>
+
 
     <title>ArtDrop</title>
 
@@ -12,10 +15,11 @@
   </head>
 
   <body>
+
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <a href="/">ArtDrop</a>
+          <%= link_to 'ArtDrop', root_path %>
         </li>
         <li class="toggle-topbar menu-icon">
           <a href="#"><span>Menu</span></a>
@@ -24,20 +28,66 @@
       <section class="top-bar-section">
         <ul class="right">
       <% if user_signed_in? %>
-          <li class="active"> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
-          <li class="active"> <%= link_to 'Edit Profile', edit_user_registration_path %> </li>
+
+
+
+          <li class="active"><%= link_to ' Upload', new_user_project_path(current_user), class: "fa fa-upload" %></li>
+          <li class="active"> <%= link_to ' Profile', current_user , class: "fa fa-upload" %> </li>
+          <li class="active"> <%= link_to ' Sign Out', destroy_user_session_path, method: :delete , class: "fa fa-upload" %> </li>
+          <li class="active"> <%= link_to ' Edit Profile', edit_user_registration_path , class: "fa fa-upload" %> </li>
+
+
+
       <% else %>
-          <li class="active"> <%= link_to 'Sign Up', new_user_registration_path %> </li>
-          <li class="active"> <%= link_to 'Sign In', new_user_session_path %> </li>
+
+        <li class="active">
+          <%= link_to '#', data: {:'reveal-id' => 'signinModal'} do %>
+          <i class="fa fa-sign-in"></i>
+          Sign In
+          <% end %>
+          <div id="signinModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <%= render 'devise/sessions/new' %>
+              <%= link_to '#', data: {:'reveal-id' => 'passwordModal'} do %>
+              <i class="fa fa-key"></i>
+              Forgot Password?
+              <% end %>
+            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+          </div>
+        </li>
+
+
+        <div id="passwordModal" class="reveal-modal" data-reveal aria-labelledby="passwordModalTitle" aria-hidden="true" role="dialog">
+          <%= render 'devise/passwords/new' %>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
+
+
+
+        <li class="active">
+          <%= link_to '#', data: {:'reveal-id' => 'signupModal'} do %>
+            <i class="fa fa-user-circle"></i>
+            Sign Up
+          <% end %>
+          <div id="signupModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <%= render 'devise/registrations/new' %>
+            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+          </div>
+        </li>
       <% end %>
         </ul>
       </section>
     </nav>
 
-    <h3 class="alert text-center"><%= alert %></h3>
-    <h3 class="notice text-center"><%= notice %></h3>
+    <p class="alert text-center"><%= alert %></p>
+    <p class="notice text-center"><%= notice %></p>
 
     <%= yield %>
 
+    <script src="assets/jquery.js"></script>
+    <script src="assets/fastclick.js"></script>
+    <script src="assets/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>

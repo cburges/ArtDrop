@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'rails-assets-foundation', source: 'https://rails-assets.org'
+gem 'carrierwave'
+gem 'awesome_link'
 
 group :development, :test do
   gem 'pry-rails'
