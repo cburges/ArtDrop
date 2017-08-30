@@ -1,3 +1,25 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.avatar-box {
+text-align: center;
+position: sticky;
+margin-top: 10rem;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.profile-info {
+  text-align: center;
+}
+.user-projects {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

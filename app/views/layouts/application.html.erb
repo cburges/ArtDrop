@@ -29,15 +29,30 @@
         <ul class="right">
       <% if user_signed_in? %>
 
+          <li class="active">
+          <%= link_to new_user_project_path(current_user) do %>
+            <i class="fa fa-upload"></i> Upload
+          <% end %>
+          </li>
 
+          <li class="active">
+          <%= link_to current_user do %>
+            <i class="fa fa-user-circle"></i> Profile
+          <% end %>
+          </li>
 
-          <li class="active"><%= link_to ' Upload', new_user_project_path(current_user), class: "fa fa-upload" %></li>
-          <li class="active"> <%= link_to ' Profile', current_user , class: "fa fa-upload" %> </li>
-          <li class="active"> <%= link_to ' Sign Out', destroy_user_session_path, method: :delete , class: "fa fa-upload" %> </li>
-          <li class="active"> <%= link_to ' Edit Profile', edit_user_registration_path , class: "fa fa-upload" %> </li>
+          <li class="active">
+          <%= link_to destroy_user_session_path do %>
+            <i class="fa fa-sign-out"></i> Sign Out
+          <% end %>
+          </li>
 
-
-
+          <li class="active">
+          <%= link_to edit_user_registration_path do %>
+            <i class="fa fa-cog"></i> Edit Profile
+          <% end %>
+          </li>
+          
       <% else %>
 
         <li class="active">

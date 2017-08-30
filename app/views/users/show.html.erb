@@ -1,16 +1,21 @@
-<h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
+<div class="avatar-box">
+<div class="profile-avatar">
+  <%= image_tag(current_user.avatar.url) %>
+</div>
+</div>
 
-<h2>Projects:</h2>
-<% @user.projects.each do |project| %>
-  <p>
-    <strong>
-      <%= project.title %>
-    </strong>
-  </p>
+<div class="profile-info">
+  <h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
+</div>
 
-  <p>
-    <strong>
-      <%= project.description %>
-    </strong>
-  </p>
-<% end %>
+<div class="user-projects">
+  <ul class="small-block-grid-2 medium-block-grid-5 large-block-grid-7">
+    <% @user.projects.each do |project| %>
+      <li class="singular-project">
+        <%= project.title %>
+        <img src="http://via.placeholder.com/500x500">
+
+      </li>
+    <% end %>
+  </ul>
+</div>
