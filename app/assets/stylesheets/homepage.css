@@ -1,0 +1,36 @@
+.home-text {
+  text-align: center;
+  margin-top: 16%;
+  height: 325px;
+}
+
+.home {
+  font-family: 'Text Me One', sans-serif;
+}
+div.button.round {
+  font-family: 'Text Me One', sans-serif;
+  background-color: teal;
+  width: 12%;
+}
+
+div.button.round :hover {
+  color: #00c5c5;
+}
+
+div.button.round >a {
+  color: white;
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+  background-image: url("notebook.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+#content {
+	padding-bottom:100px; /* Height of the footer element */
+
+}
