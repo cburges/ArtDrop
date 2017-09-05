@@ -1,5 +1,4 @@
 class Project < ApplicationRecord
   belongs_to :user
-
-  validates :title, presence: true
+  mount_uploaders :images, ImageUploader
 end
