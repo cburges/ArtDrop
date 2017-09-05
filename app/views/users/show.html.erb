@@ -6,7 +6,9 @@
 
 <div class="profile-info">
   <h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
+  <h5> <%= @user.location %> </h5>
 </div>
+
 
 <div class="user-projects">
   <ul class="small-block-grid-2 medium-block-grid-5 large-block-grid-7">
@@ -14,7 +16,6 @@
       <li class="singular-project">
         <%= project.title %>
         <img src="http://via.placeholder.com/500x500">
-
       </li>
     <% end %>
   </ul>
