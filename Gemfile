@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 gem 'carrierwave'
 gem 'awesome_link'
+gem 'rmagick'
 
 group :development, :test do
   gem 'pry-rails'

@@ -6,7 +6,7 @@
 
 <div class="profile-info">
   <h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
-  <h5> <%= @user.location %> </h5>
+  <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @user.location %> </h5>
 </div>
 
 
@@ -14,8 +14,9 @@
   <ul class="small-block-grid-2 medium-block-grid-5 large-block-grid-7">
     <% @user.projects.each do |project| %>
       <li class="singular-project">
-        <%= project.title %>
-        <img src="http://via.placeholder.com/500x500">
+        <%= link_to user_project_path(@user, project) do %>
+        <%= image_tag (project.images.first) %>
+        <% end %>
       </li>
     <% end %>
   </ul>
