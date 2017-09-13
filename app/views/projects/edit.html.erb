@@ -1,4 +1,5 @@
-<h2>New Project:</h2>
+
+<h1>Edit Project</h1>
 <%= simple_form_for([@user,@project]) do |f| %>
 <p>
   <%= f.label :title %><br>
@@ -20,6 +21,8 @@
 </p>
 
 <p>
-  <%= f.submit %>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
 </p>
 <% end %>
