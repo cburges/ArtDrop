@@ -1,7 +1,8 @@
+
 .home-text {
   text-align: center;
-  margin-top: 16%;
-  height: 325px;
+  margin: auto;
+  padding-top: 25%;
 }
 
 .home {
@@ -22,7 +23,7 @@ div.button.round >a {
 }
 
 #wrapper {
-	min-height:100%;
+	min-height:125%;
 	position:relative;
   background-image: url("notebook.jpeg");
   background-size: cover;
@@ -30,7 +31,14 @@ div.button.round >a {
 
 }
 
-#content {
-	padding-bottom:100px; /* Height of the footer element */
+.page-footer {
+  background-color: black;
+  height: 20%;
+  color: teal;
+}
 
+.page-links {
+  text-align: center;
+  color: teal !important;
+  padding-top: 3%;
 }

@@ -6,12 +6,12 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Text+Me+One" rel="stylesheet">
     <script src="https://use.fontawesome.com/9b2b5e2406.js"></script>
 
-
     <title>ArtDrop</title>
 
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
@@ -35,24 +35,26 @@
           <% end %>
           </li>
 
-          <li class="active">
-          <%= link_to current_user do %>
-            <i class="fa fa-user-circle"></i> Profile
-          <% end %>
+          <li class="has-dropdown">
+            <a>
+            <%= link_to current_user do %>
+              <i class="fa fa-user-circle"></i> Profile
+            <% end %>
+          </a>
+            <ul class="dropdown">
+                <li class="active">
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa fa-cog"></i> Edit Profile
+                <% end %>
+                </li>
+                <li class="active">
+                <%= link_to destroy_user_session_path do %>
+                  <i class="fa fa-sign-out"></i> Sign Out
+                <% end %>
+                </li>
+            </ul>
           </li>
 
-          <li class="active">
-          <%= link_to destroy_user_session_path do %>
-            <i class="fa fa-sign-out"></i> Sign Out
-          <% end %>
-          </li>
-
-          <li class="active">
-          <%= link_to edit_user_registration_path do %>
-            <i class="fa fa-cog"></i> Edit Profile
-          <% end %>
-          </li>
-          
       <% else %>
 
         <li class="active">
@@ -92,17 +94,17 @@
         </ul>
       </section>
     </nav>
-
-    <p class="alert text-center"><%= alert %></p>
-    <p class="notice text-center"><%= notice %></p>
-
+    <!-- <div class="alert text-center"><%= alert %></div> -->
+    <!-- <div class="notice text-center"><%= notice %></div> -->
     <%= yield %>
 
     <script src="assets/jquery.js"></script>
     <script src="assets/fastclick.js"></script>
     <script src="assets/foundation.min.js"></script>
+
     <script>
       $(document).foundation();
     </script>
+
   </body>
 </html>
