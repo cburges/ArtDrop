@@ -1,29 +1,28 @@
 .top-bar {
-  background: white;
+  background: black;
 }
 
 .top-bar ul li > a {
-  color: black;
+  color: teal;
 }
 
 .name {
   font-size: 34px !important;
   padding-left: 100px;
-  padding-top: 20px;
   font-family: 'Text Me One', sans-serif;
 }
 
 .top-bar-section ul li > a{
   font-family: 'Open Sans', sans-serif;
+  background: black !important;
+  color: white !important;
 }
 
 .top-bar-section ul li.active > a {
-    background: white !important;
-    color: black !important;
-    padding-top: 25px !important;
+    /*background: white !important;*/
 }
 
 .top-bar-section ul li.active > a:hover {
-    background: white !important;
+    /*background: white !important;*/
     color: teal !important;
 }
