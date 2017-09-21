@@ -23,22 +23,14 @@ div.button.round >a {
 }
 
 #wrapper {
-	min-height:125%;
+  height: 100%;
 	position:relative;
   background-image: url("notebook.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-
-}
-
-.page-footer {
-  background-color: black;
-  height: 20%;
-  color: teal;
 }
 
 .page-links {
+  padding-top: 15%;
   text-align: center;
-  color: teal !important;
-  padding-top: 3%;
 }
