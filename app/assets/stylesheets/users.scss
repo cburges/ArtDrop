@@ -39,7 +39,18 @@ position: sticky;
 }
 
 .profile-wrapper {
+  font-family: 'Text Me One', sans-serif ;
   width: 50%;
   margin: auto;
+  padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.actions {
+  margin: auto;
+  text-align: center;
+}
+
+.menu-title {
+  text-align: center;
 }

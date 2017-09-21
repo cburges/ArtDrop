@@ -1,20 +1,20 @@
 <div id="wrapper">
       <div class="home-text">
         <h1 class="home">ArtDrop</h1>
-          <div class="button round">
-        <% if user_signed_in? %>
-          <%= link_to 'Upload', new_user_project_path(current_user) %>
-        <% else %>
-          <%= link_to 'Get Started','#', data: {:'reveal-id' => 'signupModal'} %>
+          <div class="radius button">
+            <% if user_signed_in? %>
+              <%= link_to 'Upload', new_user_project_path(current_user) %>
+            <% else %>
+              <%= link_to 'Get Started','#', data: {:'reveal-id' => 'signupModal'} %>
             <div id="signupModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
               <%= render 'devise/registrations/new' %>
               <a class="close-reveal-modal" aria-label="Close">&#215;</a>
             </div>
-        <% end %>
-        </div>
-    </div>
-    <div class="page-links">
-      <%= link_to 'LinkedIn', 'https://linkedin.com/cburges' %></br>
-      <%= link_to 'Github', 'https://github.com/cburges/ArtDrop' %>
-    </div>
+          <% end %>
+          </div>
+      </div>
+  <div class="page-links">
+    <%= link_to 'LinkedIn', 'https://linkedin.com/cburges' %></br>
+    <%= link_to 'Github', 'https://github.com/cburges/ArtDrop' %>
+  </div>
 </div>
