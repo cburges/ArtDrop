@@ -8,19 +8,6 @@
 .home {
   font-family: 'Text Me One', sans-serif;
 }
-div.button.round {
-  font-family: 'Text Me One', sans-serif;
-  background-color: teal;
-  width: 12%;
-}
-
-div.button.round :hover {
-  color: #00c5c5;
-}
-
-div.button.round >a {
-  color: white;
-}
 
 #wrapper {
   height: 100%;

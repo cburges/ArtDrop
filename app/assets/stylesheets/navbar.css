@@ -1,5 +1,5 @@
 .top-bar {
-  background: black;
+  background: #e5e5e5;
 }
 
 .top-bar ul li > a {
@@ -7,15 +7,16 @@
 }
 
 .name {
+  padding-top: 2.5%;
   font-size: 34px !important;
   padding-left: 100px;
   font-family: 'Text Me One', sans-serif;
 }
 
 .top-bar-section ul li > a{
-  font-family: 'Open Sans', sans-serif;
-  background: black !important;
-  color: white !important;
+  font-family: 'Text Me One', sans-serif;
+  background: #e5e5e5 !important;
+  color: black !important;
 }
 
 .top-bar-section ul li.active > a {

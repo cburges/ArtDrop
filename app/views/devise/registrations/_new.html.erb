@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h3 class="menu-title">Sign up</h3>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -9,15 +9,14 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, autofocus: true %>
     <%= f.input :password_confirmation, label: 'Password Confirmation', required: true, autofocus: true %>
-    <%= f.input :avatar, type: :file %>
-      <div class="form-group">
-        <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden"/> <br/>
-        <span class="btn btn-default btn-file">
-          Upload Avatar Image<%= f.file_field :avatar, id: "avatar-upload" %>
-        </span>
+    <div class="form-group">
+      <img id="img_prev" width=300 height=300 src="#" alt="Profile Photo" class="img-thumbnail hidden"/> <br/>
+      <span class="btn btn-default btn-file">
+        <%= f.file_field :avatar, id: "avatar-upload" %>
+      </span>
       <%= f.hidden_field :avatar_cache %>
-      </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Sign Up" %>
+    </div>
+  <div class="actions">
+    <%= f.button :submit, "Sign Up", :class => 'radius button' %>
   </div>
 <% end %>

@@ -1,6 +1,16 @@
 <div class="form-container">
-<h2>New Project:</h2>
+<h3 class="menu-title">New Project</h3>
 <%= simple_form_for([@user,@project]) do |f| %>
+<p>
+  <div class="form-group">
+    <img id="img_prev" width=300 height=300 src="#" alt="Project Image" class="img-thumbnail hidden"/> <br/>
+    <span class="btn btn-default btn-file">
+      <%= f.file_field :images, id: "images-upload" %>
+    </span>
+    <%= f.hidden_field :images_cache %>
+  </div>
+</p>
+
 <p>
   <%= f.label :title %><br>
   <%= f.text_field :title %>
@@ -16,19 +26,8 @@
   <%= f.text_field :medium %>
 </p>
 
-<p>
-  <%= f.file_field :images, multiple: true %>
-  <div class="form-group">
-    <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden"/> <br/>
-    <span class="btn btn-default btn-file">
-      Upload Project Image<%= f.file_field :images, id: "images-upload" %>
-    </span>
-    <%= f.hidden_field :images_cache %>
-  </div>
-</p>
-
-<p>
-  <%= f.submit %>
-</p>
+<div class="actions">
+  <%= f.submit "Create Project", :class => 'radius button' %>
+</div>
 <% end %>
 </div>

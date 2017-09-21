@@ -1,20 +1,18 @@
 <div class="profile-wrapper">
-<h2>Edit Profile</h2>
+<div class="profile-avatar">
+  <%= image_tag(current_user.avatar.url) %>
+</div>
+<h3 class="menu-title">Edit Profile</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label 'Profile Photo' %>
-    <%= f.file_field :avatar %>
-  </div>
-  
   <div class="form-group">
-    <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden"/> <br/>
+    <img id="img_prev" width=300 height=300 src="#" alt="Profile Photo" class="img-thumbnail hidden"/> <br/>
     <span class="btn btn-default btn-file">
-      Upload Avatar Image<%= f.file_field :avatar, id: "avatar-upload" %>
+      <%= f.file_field :avatar, id: "avatar-upload" %>
     </span>
-    <%= f.hidden_field :avatar_cache %>
+      <%= f.hidden_field :avatar_cache %>
   </div>
 
   <div class="field">
@@ -57,10 +55,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", :class => 'radius button' %>
   </div>
 <% end %>
 
-<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p class="actions"><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 </div>
