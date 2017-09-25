@@ -12,6 +12,7 @@ gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 gem 'carrierwave'
 gem 'awesome_link'
 gem 'rmagick'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :development, :test do
   gem 'pry-rails'
