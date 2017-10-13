@@ -2,14 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Text+Me+One" rel="stylesheet">
-    <script src="https://use.fontawesome.com/9b2b5e2406.js"></script>
 
     <title>ArtDrop</title>
 
     <%= javascript_include_tag "application" %>
     <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Text+Me+One" rel="stylesheet">
+    <script src="https://use.fontawesome.com/9b2b5e2406.js"></script>
 
   </head>
 
@@ -94,14 +95,8 @@
         </ul>
       </section>
     </nav>
-    <!-- <div class="alert text-center"><%= alert %></div> -->
-    <!-- <div class="notice text-center"><%= notice %></div> -->
-    <%= yield %>
 
-    <script src="assets/jquery.js"></script>
-    <script src="assets/fastclick.js"></script>
-    <script src="assets/foundation.min.js"></script>
-    <script src="assets/modernizr.js"></script>
+    <%= yield %>
 
     <script>
       $(document).foundation();

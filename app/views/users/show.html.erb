@@ -6,7 +6,6 @@
       </div>
       <div class="profile-info">
         <h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
-        <h5> Oil Painter </h5>
         <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @user.location %> </h5>
       </div>
     </div>
@@ -19,11 +18,10 @@
       <div class="overlay">
         <div class="project">
           <%= link_to user_project_path(@user, project) do %>
-          <%= image_tag (project.images.first) %>
+          <%= image_tag (project.images.first) if project.images.present? %>
           <% end %>
         </div>
         <% end %>
       </div>
     </div>
   </div>
-</div>
