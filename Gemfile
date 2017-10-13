@@ -13,6 +13,7 @@ gem 'carrierwave'
 gem 'awesome_link'
 gem 'rmagick'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'pry-rails'
@@ -22,6 +23,7 @@ group :development, :test do
   gem 'launchy', require: false
   gem 'shoulda'
   gem 'valid_attribute'
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -30,7 +32,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'rails_12factor', group: :production
-
+group :production do
+  gem 'rails_12factor'
+end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
